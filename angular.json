@@ -13,12 +13,12 @@
       },
       "root": "projects/angular-ngrx-material-starter",
       "sourceRoot": "projects/angular-ngrx-material-starter/src",
-      "prefix": "anms",
+      "prefix": "workspace",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-ngrx-material-starter",
+            "outputPath": "dist",
             "index": "projects/angular-ngrx-material-starter/src/index.html",
             "main": "projects/angular-ngrx-material-starter/src/main.ts",
             "polyfills": "projects/angular-ngrx-material-starter/src/polyfills.ts",
@@ -32,7 +32,8 @@
               "projects/angular-ngrx-material-starter/src/styles-app-loading.scss",
               "projects/angular-ngrx-material-starter/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "baseHref": "/web/"
           },
           "configurations": {
             "production": {
@@ -67,7 +68,7 @@
                   "name": "styles",
                   "baseline": "280kb",
                   "maximumWarning": "50kb",
-                  "maximumError": "100kb"
+                  "maximumError": "500kb"
                 },
                 {
                   "type": "bundle",
@@ -88,7 +89,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-ngrx-material-starter:build"
+            "browserTarget": "angular-ngrx-material-starter:build",
+            "baseHref": "/"
           },
           "configurations": {
             "production": {

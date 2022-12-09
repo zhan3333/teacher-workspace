@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-md-2 col-md-8 entry">
+      <workspace-big-input rtl [placeholder]="'添加任务' | translate" [value]="newTodo"
+                           (keyup)="onNewTodoChange($event)"
+                           (keyup.enter)="!isAddTodoDisabled && onAddTodo()" (keyup.escape)="onNewTodoClear()">
+        <workspace-big-input-action fontSet="fas" fontIcon="plus" faIcon="plus" color="accent"
+                                    (action)="onAddTodo()" [disabled]="isAddTodoDisabled"
+                                    [matTooltip]="'workspace.examples.todos.tooltip.add' | translate"
+                                    matTooltipPosition="before">
+        </workspace-big-input-action>
+      </workspace-big-input>
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngIf="tasks.length > 0">
+      <div class="col-md-6">
+        <h2 class="dotos-title" rtl>
+          <span>{{ '任务列表' | translate }}</span>
+          <mat-chip-list class="todos-filter-info d-none d-sm-block d-md-none d-lg-block">
+            <mat-chip [disabled]=true [ngPlural]="tasks.length">
+              {{ 'workspace.examples.todos.filter.description' | translate }}
+              <ng-template ngPluralCase="other">{{ tasks.length }} {{ 'workspace.examples.todos.filter.items' |
+                translate }}</ng-template>
+              <ng-template ngPluralCase="=1">{{ 'workspace.examples.todos.filter.one' | translate }} {{
+                'workspace.examples.todos.filter.item' | translate }}</ng-template>
+              <ng-template ngPluralCase="=0">{{ 'workspace.examples.todos.filter.none' | translate }} {{
+                'workspace.examples.todos.filter.items' | translate }}</ng-template>
+            </mat-chip>
+          </mat-chip-list>
+        </h2>
+        <mat-card *ngFor="let task of tasks" class="todo" [ngClass]="routeAnimationsElements"
+                  (click)="toTaskStatusPage(task?.id)">
+          <span class="todo-label">
+            &nbsp;{{task.title}}&nbsp;
+          </span>
+        </mat-card>
+        <br>
+        <br>
+      </div>
+    </ng-container>
+  </div>
+</div>

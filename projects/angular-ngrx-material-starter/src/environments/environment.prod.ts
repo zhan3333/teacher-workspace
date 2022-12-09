@@ -1,11 +1,11 @@
 const packageJson = require('../../../../package.json');
 
 export const environment = {
-  appName: 'Angular Ngrx Material Starter',
+  appName: 'Teacher Workspace',
   envName: 'PROD',
   production: true,
   test: false,
-  i18nPrefix: '/angular-ngrx-material-starter',
+  i18nPrefix: '/web',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],
@@ -20,5 +20,6 @@ export const environment = {
     typescript: packageJson.devDependencies['typescript'],
     cypress: packageJson.devDependencies['cypress'],
     eslint: packageJson.devDependencies['eslint']
-  }
+  },
+  api: ''
 };

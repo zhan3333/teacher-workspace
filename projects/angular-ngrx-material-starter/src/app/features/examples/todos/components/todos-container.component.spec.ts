@@ -40,7 +40,7 @@ describe('TodosComponent', () => {
   };
 
   const getTodoInput = () =>
-    fixture.debugElement.query(By.css('anms-big-input input'));
+    fixture.debugElement.query(By.css('workspace-big-input input'));
 
   const getTodoItems = () => fixture.debugElement.queryAll(By.css('.todo'));
 
@@ -48,14 +48,14 @@ describe('TodosComponent', () => {
 
   const getAddTodoButton = async () => {
     const buttons = await loader.getAllHarnesses(
-      MatButtonHarness.with({ selector: 'anms-big-input-action button' })
+      MatButtonHarness.with({ selector: 'workspace-big-input-action button' })
     );
     return buttons[0];
   };
 
   const getRemoveDoneTodosButton = async () => {
     const buttons = await loader.getAllHarnesses(
-      MatButtonHarness.with({ selector: 'anms-big-input-action button' })
+      MatButtonHarness.with({ selector: 'workspace-big-input-action button' })
     );
     return buttons[1];
   };

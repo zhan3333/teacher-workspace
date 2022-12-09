@@ -1,10 +1,10 @@
 {
-  "name": "angular-ngrx-material-starter",
+  "name": "teacher-workspace",
   "version": "12.4.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
+    "start": "ng serve --open --port=4201",
     "start:prod": "npm run build:prod && npm run server",
     "build": "ng build",
     "build:prod": "ng build --configuration production",
@@ -13,7 +13,7 @@
     "watch": "ng test --configuration=test --browsers ChromeHeadless --watch --reporters dots",
     "e2e": "ng e2e",
     "e2e:ci": "ng e2e",
-    "ci": "npm run format:test && npm run lint && ng test --configuration=test --browsers ChromeTravisCi --code-coverage && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter/",
+    "ci": "npm run format:test && npm run lint && ng test --configuration=test --browsers ChromeTravisCi --code-coverage && npm run build:prod -- --deploy-url / --base-href /",
     "format:write": "prettier projects/**/*.{ts,json,md,scss} --write",
     "format:test": "prettier projects/**/*.{ts,json,md,scss} --list-different",
     "release": "standard-version && git push --follow-tags origin master",

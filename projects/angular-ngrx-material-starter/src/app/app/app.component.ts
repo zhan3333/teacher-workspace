@@ -1,21 +1,21 @@
 import browser from 'browser-detect';
 import { Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { environment as env } from '../../environments/environment';
 
 import {
+  AppState,
   authLogin,
   authLogout,
-  routeAnimations,
   LocalStorageService,
-  selectIsAuthenticated,
-  selectSettingsStickyHeader,
-  selectSettingsLanguage,
+  routeAnimations,
   selectEffectiveTheme,
-  AppState
+  selectIsAuthenticated,
+  selectSettingsLanguage,
+  selectSettingsStickyHeader
 } from '../core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
@@ -23,7 +23,7 @@ import {
 } from '../core/settings/settings.actions';
 
 @Component({
-  selector: 'anms-root',
+  selector: 'workspace-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [routeAnimations]
@@ -35,15 +35,8 @@ export class AppComponent implements OnInit {
   year = new Date().getFullYear();
   logo = 'assets/logo.png';
   languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he', 'ar'];
-  navigation = [
-    { link: 'about', label: 'anms.menu.about' },
-    { link: 'feature-list', label: 'anms.menu.features' },
-    { link: 'examples', label: 'anms.menu.examples' }
-  ];
-  navigationSideMenu = [
-    ...this.navigation,
-    { link: 'settings', label: 'anms.menu.settings' }
-  ];
+  navigation = [{ link: 'tasks', label: 'workspace.menu.tasks' }];
+  navigationSideMenu = [...this.navigation];
 
   isAuthenticated$: Observable<boolean> | undefined;
   stickyHeader$: Observable<boolean> | undefined;

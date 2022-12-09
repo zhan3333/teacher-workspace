@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
+import { TasksComponent } from './features/tasks/tasks.component';
 
 @NgModule({
   imports: [

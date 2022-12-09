@@ -1,9 +1,9 @@
 @use '~@angular/material' as mat;
 
-@mixin anms-child-component-theme($theme) {
+@mixin workspace-child-component-theme($theme) {
   $warn: map-get($theme, warn);
 
-  anms-child {
+  workspace-child {
     > div {
       border-color: mat.get-color-from-palette($warn);
 

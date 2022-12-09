@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row text-center mt-1">
+    <h2>任务: {{task?.title}}</h2>
+    <p>请完成的同学在自己名字后边打勾</p>
+  </div>
+  <div class="row">
+    <mat-selection-list #students>
+      <mat-list-option *ngFor="let item of taskStatus" [selected]="item.status === 'DONE'"
+                       (click)="onStatusChange(students, item?.student_name)" [value]="item.student_name">
+        {{item.student_name}}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+</div>
+

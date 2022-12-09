@@ -6,7 +6,7 @@
 const packageJson = require('../../../../package.json');
 
 export const environment = {
-  appName: 'Angular Ngrx Material Starter',
+  appName: 'Teacher Workspace',
   envName: 'DEV',
   production: false,
   test: false,
@@ -24,5 +24,6 @@ export const environment = {
     typescript: packageJson.devDependencies['typescript'],
     cypress: packageJson.devDependencies['cypress'],
     eslint: packageJson.devDependencies['eslint']
-  }
+  },
+  api: 'http://127.0.0.1:9003'
 };
