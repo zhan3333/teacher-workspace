@@ -34,6 +34,7 @@ func main() {
 		AllowCredentials: true,
 		ExposeHeaders:    []string{"X-Request-Id"},
 		MaxAge:           12 * time.Hour,
+		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"},
 	}))
 
 	// web 文件

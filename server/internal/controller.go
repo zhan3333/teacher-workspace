@@ -156,7 +156,7 @@ func (r Route) DelTask(c *gin.Context) {
 		c.String(http.StatusBadRequest, "invalid task_id %s: %w", taskIdStr, err)
 		return
 	}
-	if err := r.db.Delete(&Task{}, taskID); err != nil {
+	if err := r.db.Delete(&Task{}, taskID).Error; err != nil {
 		c.String(http.StatusInternalServerError, "delete task failed: %w", err)
 		return
 	}
