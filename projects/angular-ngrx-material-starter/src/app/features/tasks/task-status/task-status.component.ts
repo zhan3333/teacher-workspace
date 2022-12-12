@@ -21,6 +21,12 @@ export class TaskStatusComponent implements OnInit {
   public taskStatus: TaskStatus[] = [];
   public task: Task | undefined;
   task_id = 0;
+  groupNames: string[] = [
+    '第一组(付伊灵)',
+    '第二组(邵馨漫)',
+    '第三组(王萧雅)',
+    '第四组(徐馨雨)'
+  ];
 
   constructor(
     private activated: ActivatedRoute,

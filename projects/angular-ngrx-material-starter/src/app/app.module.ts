@@ -6,7 +6,8 @@ import { CoreModule } from './core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
-import { TasksComponent } from './features/tasks/tasks.component';
+import { ConfirmDialogComponent } from './shared/confirm.dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -18,9 +19,10 @@ import { TasksComponent } from './features/tasks/tasks.component';
     CoreModule,
 
     // app
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

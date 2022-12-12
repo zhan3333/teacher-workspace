@@ -74,6 +74,7 @@ func (r Route) GetTaskStatus(c *gin.Context) {
 		StudentID   uint   `json:"student_id"`
 		StudentName string `json:"student_name"`
 		Status      string `json:"status"`
+		GroupName   string `json:"group_name"`
 	}
 	result := []TaskStatus{}
 	for _, v := range students {
@@ -82,6 +83,7 @@ func (r Route) GetTaskStatus(c *gin.Context) {
 			StudentID:   v.ID,
 			StudentName: v.Name,
 			Status:      "ACTIVE",
+			GroupName:   v.GroupName,
 		})
 	}
 	savedStatus := []TaskStatus{}
